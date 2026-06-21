@@ -1,0 +1,122 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #202124;
+    background: #eef3f8;
+}
+
+button {
+    font: inherit;
+}
+
+.game-shell {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 24px;
+}
+
+.game-panel {
+    width: min(100%, 420px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 22px;
+}
+
+.game-header {
+    text-align: center;
+}
+
+.game-header h1 {
+    margin: 0 0 10px;
+    font-size: 2.5rem;
+    line-height: 1.1;
+}
+
+.game-status {
+    min-height: 24px;
+    margin: 0;
+    color: #374151;
+    font-size: 1.05rem;
+    font-weight: 700;
+}
+
+.board {
+    width: min(86vw, 360px);
+    aspect-ratio: 1;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    gap: 10px;
+}
+
+.cell {
+    width: 100%;
+    min-width: 0;
+    border: 2px solid #1f2937;
+    border-radius: 8px;
+    background: #ffffff;
+    cursor: pointer;
+    color: #111827;
+    font-size: clamp(2.3rem, 12vw, 4rem);
+    font-weight: 800;
+    line-height: 1;
+    transition: background-color 140ms ease, transform 140ms ease, border-color 140ms ease;
+}
+
+.cell:hover,
+.cell:focus-visible {
+    background: #eaf2ff;
+    border-color: #2563eb;
+    outline: none;
+}
+
+.cell.cell-selected {
+    background: #dbeafe;
+    border-color: #2563eb;
+    transform: scale(0.98);
+}
+
+.cell.cell-ai {
+    color: #9f1239;
+    background: #fff1f2;
+    border-color: #e11d48;
+}
+
+.cell.cell-win {
+    color: #064e3b;
+    background: #d1fae5;
+    border-color: #059669;
+}
+
+.cell:disabled {
+    cursor: default;
+}
+
+.reset-button {
+    min-width: 120px;
+    min-height: 44px;
+    border: 0;
+    border-radius: 8px;
+    color: #ffffff;
+    background: #1f2937;
+    cursor: pointer;
+    transition: background-color 140ms ease, transform 140ms ease;
+}
+
+.reset-button:hover,
+.reset-button:focus-visible {
+    background: #111827;
+    outline: none;
+}
+
+.reset-button:active {
+    transform: translateY(1px);
+}

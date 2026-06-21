@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tic-Tac-Toe</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <main class="game-shell">
+        <section class="game-panel" aria-labelledby="game-title">
+            <header class="game-header">
+                <h1 id="game-title">Tic-Tac-Toe</h1>
+                <p id="game-status" class="game-status" aria-live="polite">
+                    Your turn.
+                </p>
+            </header>
+
+            <div class="board" aria-label="Tic-Tac-Toe board" data-ai-url="{{ url_for('ai_move') }}">
+                <button class="cell" type="button" data-cell="0" aria-label="Cell 1"></button>
+                <button class="cell" type="button" data-cell="1" aria-label="Cell 2"></button>
+                <button class="cell" type="button" data-cell="2" aria-label="Cell 3"></button>
+                <button class="cell" type="button" data-cell="3" aria-label="Cell 4"></button>
+                <button class="cell" type="button" data-cell="4" aria-label="Cell 5"></button>
+                <button class="cell" type="button" data-cell="5" aria-label="Cell 6"></button>
+                <button class="cell" type="button" data-cell="6" aria-label="Cell 7"></button>
+                <button class="cell" type="button" data-cell="7" aria-label="Cell 8"></button>
+                <button class="cell" type="button" data-cell="8" aria-label="Cell 9"></button>
+            </div>
+
+            <button id="reset-button" class="reset-button" type="button">
+                Reset
+            </button>
+        </section>
+    </main>
+
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html>
