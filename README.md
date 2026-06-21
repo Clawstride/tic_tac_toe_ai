@@ -143,5 +143,3 @@ Through this project, I practiced:
 ## Author
 
 **Sanjit Kore**
-
-Built as part of the **#20Days20Projects** challenge to strengthen full-stack development and AI problem-solving skills.
